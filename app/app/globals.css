@@ -1,0 +1,19 @@
+:root { --background: #0f172a; --foreground: #ffffff; --primary: #9333ea; --primary-hover: #7e22ce; --danger: #ef4444; --card-bg: #1e293b; --text-input-bg: #334155; }
+body { background-color: var(--background); color: var(--foreground); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; justify-content: center; min-height: 100vh; }
+.main-container { width: 100%; max-width: 600px; padding: 2rem; display: flex; flex-direction: column; align-items: center; margin-top: 20px; }
+h1 { background: linear-gradient(to right, #c084fc, #9333ea); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 2.5rem; margin-bottom: 2rem; text-align: center; }
+.wallet-wrapper { margin-bottom: 2rem; }
+input[type="text"] { flex: 1; padding: 12px 16px; border-radius: 8px; border: 1px solid #475569; background-color: var(--text-input-bg); color: white; font-size: 1rem; outline: none; }
+input[type="text"]:focus { border-color: var(--primary); }
+input[type="checkbox"] { width: 24px; height: 24px; cursor: pointer; accent-color: #22c55e; margin-right: 15px; }
+.btn-primary { background-color: var(--primary); color: white; padding: 12px 24px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; margin-left: 10px; }
+.btn-primary:hover { background-color: var(--primary-hover); }
+.btn-action { border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-weight: bold; color: white; margin-left: 5px; }
+.btn-edit { background-color: #3b82f6; } .btn-save { background-color: #22c55e; } .btn-cancel { background-color: #64748b; } .btn-delete { background-color: var(--danger); }
+.task-list { width: 100%; display: flex; flex-direction: column; gap: 15px; }
+.task-card { background-color: var(--card-bg); padding: 15px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #334155; }
+.task-left { display: flex; align-items: center; flex: 1; overflow: hidden; }
+.task-content { display: flex; flex-direction: column; }
+.task-desc { font-size: 1.1rem; font-weight: 500; word-break: break-all; }
+.task-id { font-size: 0.75rem; color: #94a3b8; margin-top: 4px; }
+.edit-container { display: flex; width: 100%; gap: 10px; }

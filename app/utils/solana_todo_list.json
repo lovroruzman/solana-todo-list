@@ -1,0 +1,186 @@
+{
+  "address": "2CRb8pBFCyfDensBbjR6H5GQ6ZsG1S87LboJ2FwdkswB",
+  "metadata": {
+    "name": "solana_todo_list",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "add_task",
+      "discriminator": [
+        234,
+        40,
+        30,
+        119,
+        150,
+        53,
+        76,
+        83
+      ],
+      "accounts": [
+        {
+          "name": "task",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "author",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "description",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "delete_task",
+      "discriminator": [
+        112,
+        220,
+        10,
+        109,
+        3,
+        168,
+        46,
+        73
+      ],
+      "accounts": [
+        {
+          "name": "task",
+          "writable": true
+        },
+        {
+          "name": "author",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "task"
+          ]
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "mark_done",
+      "discriminator": [
+        112,
+        146,
+        215,
+        90,
+        40,
+        16,
+        44,
+        149
+      ],
+      "accounts": [
+        {
+          "name": "task",
+          "writable": true
+        },
+        {
+          "name": "author",
+          "signer": true,
+          "relations": [
+            "task"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "is_done",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "update_task",
+      "discriminator": [
+        100,
+        51,
+        124,
+        168,
+        211,
+        208,
+        42,
+        228
+      ],
+      "accounts": [
+        {
+          "name": "task",
+          "writable": true
+        },
+        {
+          "name": "author",
+          "signer": true,
+          "relations": [
+            "task"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "new_description",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Task",
+      "discriminator": [
+        79,
+        34,
+        229,
+        55,
+        88,
+        90,
+        55,
+        84
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "TextTooLong",
+      "msg": "Text is too long"
+    }
+  ],
+  "types": [
+    {
+      "name": "Task",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "author",
+            "type": "pubkey"
+          },
+          {
+            "name": "is_done",
+            "type": "bool"
+          },
+          {
+            "name": "description",
+            "type": "string"
+          },
+          {
+            "name": "created_at",
+            "type": "i64"
+          }
+        ]
+      }
+    }
+  ]
+}
