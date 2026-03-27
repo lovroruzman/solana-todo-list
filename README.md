@@ -28,12 +28,14 @@
 Pokrenite lokalni Solana čvor u zasebnom terminalu:
 ```bash
 solana-test-validator
+```
 
 ### 2. Build i Deploy programa
 Kompajlirajte Rust kod i pošaljite ga na lokalnu mrežu:
 ```bash
 anchor build
 anchor deploy
+```
 
 ### 3. Pokretanje sučelja
 Uđite u app direktorij, instalirajte zavisnosti i pokrenite razvojni server:
@@ -41,4 +43,5 @@ Uđite u app direktorij, instalirajte zavisnosti i pokrenite razvojni server:
 cd app
 yarn install
 yarn dev
+```
 
