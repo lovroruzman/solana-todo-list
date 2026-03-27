@@ -1,47 +1,61 @@
-# 🚀 Solana Decentralizirana To-Do Aplikacija (dApp)
+🚀 Solana Decentralized To-Do Application (dApp)
 
-[cite_start]Ovaj projekt predstavlja funkcionalnu Web3 aplikaciju za upravljanje zadacima izgrađenu na **Solana** blockchainu[cite: 3]. [cite_start]Za razliku od tradicionalnih Web2 rješenja koja pohranjuju podatke na centraliziranim serverima, ovaj sustav osigurava korisniku potpuno vlasništvo nad podacima i otpornost na cenzuru[cite: 8, 9, 14].
+This project is a functional Web3 task management application built on the Solana blockchain. Unlike traditional Web2 solutions that store user data on centralized servers, this system ensures full data ownership and censorship resistance for the user.
 
-## 📋 Pregled Projekta
-[cite_start]Tradicionalne aplikacije ovise o pružatelju usluge koji podatke može obrisati ili izgubiti[cite: 10]. Moje rješenje koristi:
-* [cite_start]**Nepromjenjivost:** Logika aplikacije (Smart Contract) je javno vidljiva i nepromjenjiva nakon postavljanja na mrežu[cite: 16].
-* [cite_start]**Vlasništvo:** Svaki zadatak je kriptografski povezan isključivo s novčanikom (Walletom) korisnika[cite: 14].
-* [cite_start]**Skalabilnost:** Zahvaljujući **Proof of History (PoH)** mehanizmu, transakcije su gotovo trenutne uz minimalne naknade (cca $0.00025)[cite: 32, 35, 36].
+📋 Project Overview
 
-## 🛠️ Tehnologije (Tech Stack)
-* [cite_start]**Backend:** Rust & Anchor Framework za pisanje sigurnih pametnih ugovora[cite: 21, 22].
-* [cite_start]**Frontend:** Next.js (React) okvir za izradu modernog korisničkog sučelja[cite: 23].
-* [cite_start]**Blockchain Integracija:** Solana Web3.js & Wallet Adapter biblioteke[cite: 24].
-* [cite_start]**Autentifikacija:** Phantom Wallet za identifikaciju korisnika i potpisivanje transakcija[cite: 25, 92].
+Traditional applications rely on service providers that can delete, censor, or lose data. This solution leverages:
 
-## 🏗️ Arhitektura (Solana Account Model)
-[cite_start]U ovom projektu primijenjen je specifičan model gdje je logika strogo odvojena od pohrane podataka[cite: 39]:
-1. [cite_start]**Program (Stateless):** Pametni ugovor napisan u Rustu koji služi isključivo kao izvršni kod[cite: 40].
-2. [cite_start]**Data Accounts (Stateful):** Svaki zadatak je zaseban "Account" na blockchainu koji pohranjuje opis, status (`is_done`) i vlasnika[cite: 42, 46].
-3. [cite_start]**Rent:** Mala količina SOL-a potrebna da bi račun s podacima ostao aktivan na mreži[cite: 43].
+Immutability: The application logic (Smart Contract) is publicly visible and immutable once deployed to the network.
 
+Ownership: Every task is cryptographically linked exclusively to the user's wallet.
 
+Scalability: Thanks to the Proof of History (PoH) mechanism, transactions are nearly instantaneous with minimal fees (approx. $0.00025).
 
-## 🚀 Kako pokrenuti projekt lokalno?
+🛠️ Tech Stack
 
-### 1. Pokretanje validatora
-Pokrenite lokalni Solana čvor u zasebnom terminalu:
-```bash
+Backend: Rust & Anchor Framework for writing secure and robust smart contracts.
+
+Frontend: Next.js (React) framework for building a modern, fast user interface.
+
+Blockchain Integration: Solana Web3.js & Wallet Adapter libraries.
+
+Authentication: Phantom Wallet for user identification and transaction signing.
+
+🏗️ Architecture (Solana Account Model)
+
+This project applies a specific model where program logic is strictly separated from data storage:
+
+Program (Stateless): The smart contract written in Rust, which serves as the executable code.
+
+Data Accounts (Stateful): Every task is a separate "Account" on the blockchain storing the description, completion status (is_done), and owner.
+
+Rent: A small amount of SOL required to keep the data account active on the network.
+
+🚀 How to run the project locally?
+
+1. Start the Validator
+
+Run a local Solana node in a separate terminal:
+
 solana-test-validator
-```
 
-### 2. Build i Deploy programa
-Kompajlirajte Rust kod i pošaljite ga na lokalnu mrežu:
-```bash
+
+2. Build and Deploy the Program
+
+Compile the Rust code and deploy it to the local network:
+
 anchor build
 anchor deploy
-```
 
-### 3. Pokretanje sučelja
-Uđite u app direktorij, instalirajte zavisnosti i pokrenite razvojni server:
-```bash
+
+3. Start the Frontend
+
+Navigate to the app directory, install dependencies, and start the development server:
+
 cd app
 yarn install
 yarn dev
-```
 
+
+This project was developed as part of a seminar paper titled "Development of a Decentralized To-Do Application on the Solana Blockchain". For a detailed technical analysis, please refer to the attached PDF: Solana To-Do list.pdf.
