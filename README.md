@@ -30,22 +30,25 @@ This project applies a specific model where program logic is strictly separated 
 ### **1\. Start the Validator**
 
 Run a local Solana node in a separate terminal:
-
+```bash
 solana-test-validator
+```
 
 ### **2\. Build and Deploy the Program**
 
 Compile the Rust code and deploy it to the local network:
-
+```bash
 anchor build  
 anchor deploy
+```
+
 
 ### **3\. Start the Frontend**
 
 Navigate to the app directory, install dependencies, and start the development server:
-
+```bash
 cd app  
 yarn install  
 yarn dev
-
+```
 *This project was developed as part of a seminar paper titled "Development of a Decentralized To-Do Application on the Solana Blockchain". For a detailed technical analysis, please refer to the attached PDF: **Solana To-Do list.pdf**.*
