@@ -1,5 +1,7 @@
 # **🚀 Solana Decentralized To-Do Application (dApp)**
 
+![Project Hero](./solana%20to-do%20list%20hero.png)
+
 This project is a functional Web3 task management application built on the **Solana** blockchain. Unlike traditional Web2 solutions that store user data on centralized servers, this system ensures full data ownership and censorship resistance for the user.
 
 ## **📋 Project Overview**
